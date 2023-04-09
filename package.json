@@ -10,6 +10,7 @@
     "@wordpress/env": "^5.15.0",
     "@wordpress/scripts": "^26.1.0",
     "eslint-import-resolver-typescript": "^3.5.5",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "ts-loader": "^9.4.2"
   }
 }

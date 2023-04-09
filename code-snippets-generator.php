@@ -29,7 +29,7 @@ load_plugin_textdomain( 'code-snippets-generator', false, basename( dirname( __F
  */
 function code_snippets_generator_shortcode() {
 	if ( strpos( get_permalink( get_the_ID() ), '/code-snippets-generator/' ) ) {
-		echo '<div id="code-snippets-generator">a</div>';
+		echo '<div id="code-snippets-generator"></div>';
 	}
 }
 

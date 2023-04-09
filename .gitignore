@@ -1,0 +1,47 @@
+
+#-------------------------------
+#   Created by OS
+#-------------------------------
+# Windows
+Thumbs.db
+# Mac
+.DS_Store
+
+#-------------------------------
+#   Created by Composer
+#-------------------------------
+vendor/
+
+#-------------------------------
+#   Created by npm
+#-------------------------------
+node_modules/
+
+#-------------------------------
+#   Created by webpack
+#-------------------------------
+build/
+
+#-------------------------------
+#   Created by Linter
+#-------------------------------
+.eslintcache
+.stylelintcache
+
+#-------------------------------
+#   Created by Tester
+#-------------------------------
+.cache/
+.phpunit.result.cache
+tests/logs/
+
+#-------------------------------
+#   WordPress environment
+#-------------------------------
+.wp-env.override.json
+
+#-------------------------------
+#   etc
+#-------------------------------
+code-snippets-generator.zip
+languages/js/*.mo

@@ -33,3 +33,20 @@ function code_snippets_generator_shortcode() {
 	}
 }
 add_shortcode( 'code-snippets-generator', 'code_snippets_generator_shortcode' );
+
+/**
+ * Function to load JavaScript/CSS files into WordPress.
+ */
+function code_snippets_generator_enqueue_scripts() {
+	$asset_file = require_once plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+
+	wp_enqueue_script(
+		'code-snippets-generator',
+		plugins_url( 'build/index.js', __FILE__ ),
+		$asset_file['dependencies'],
+		$asset_file['version'],
+		true
+	);
+}
+
+add_action( 'wp_enqueue_scripts', 'code_snippets_generator_enqueue_scripts' );

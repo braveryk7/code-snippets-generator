@@ -3,7 +3,8 @@
         "szepeviktor/phpstan-wordpress": "^1.2",
         "squizlabs/php_codesniffer": "*",
         "wp-coding-standards/wpcs": "*",
-        "phpcompatibility/php-compatibility": "*"
+        "phpcompatibility/php-compatibility": "*",
+        "wp-cli/wp-cli": "*"
     },
     "scripts": {
         "post-autoload-dump": [

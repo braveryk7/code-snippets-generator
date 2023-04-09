@@ -4,6 +4,7 @@
         "wplint": "./vendor/bin/phpcs",
         "wplint-path": "./vendor/bin/phpcs --config-set installed_paths 'vendor/wp-coding-standards/wpcs'",
         "wplint-set": "./vendor/bin/phpcs --config-set default_standard WordPress",
-        "wplint-rules": "./vendor/bin/phpcs -i"
+        "wplint-rules": "./vendor/bin/phpcs -i",
+        "phpcb": "./vendor/bin/phpcs --standard=ruleset.xml"
     }
 }

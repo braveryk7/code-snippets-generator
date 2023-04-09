@@ -23,3 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 load_plugin_textdomain( 'code-snippets-generator', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+/**
+ * Short code to output the display part of Code Snippets Generator.
+ */
+function code_snippets_generator_shortcode() {
+	echo '<div id="code-snippets-generator"></div>';
+}
+add_shortcode( 'code-snippets-generator', 'code_snippets_generator_shortcode' );

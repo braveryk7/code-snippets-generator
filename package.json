@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start",
+		"wp-env": "wp-env",
+		"packages-update": "wp-scripts packages-update",
+		"zip": "sh cmd/zip.sh"
+  },
   "author": "Ken-chan",
   "license": "ISC",
   "devDependencies": {

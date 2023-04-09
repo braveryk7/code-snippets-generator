@@ -28,6 +28,8 @@ load_plugin_textdomain( 'code-snippets-generator', false, basename( dirname( __F
  * Short code to output the display part of Code Snippets Generator.
  */
 function code_snippets_generator_shortcode() {
-	echo '<div id="code-snippets-generator"></div>';
+	if ( str_ends_with( get_permalink( get_the_ID() ), '/code-snippets-generator/' ) ) {
+		echo '<div id="code-snippets-generator"></div>';
+	}
 }
 add_shortcode( 'code-snippets-generator', 'code_snippets_generator_shortcode' );

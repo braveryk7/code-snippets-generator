@@ -16,6 +16,7 @@
   "author": "Ken-chan",
   "license": "ISC",
   "devDependencies": {
+    "@types/wordpress__components": "^23.0.1",
     "@wordpress/env": "^5.15.0",
     "@wordpress/scripts": "^26.1.0",
     "eslint-import-resolver-typescript": "^3.5.5",

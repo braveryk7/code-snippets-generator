@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Ken-chan",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^5.15.0"
+  }
 }

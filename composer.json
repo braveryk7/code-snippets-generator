@@ -1,5 +1,7 @@
 {
-    "require": {},
+    "require-dev": {
+        "szepeviktor/phpstan-wordpress": "^1.2"
+    },
     "scripts": {
         "wplint": "./vendor/bin/phpcs",
         "wplint-path": "./vendor/bin/phpcs --config-set installed_paths 'vendor/wp-coding-standards/wpcs'",

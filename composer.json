@@ -1,7 +1,8 @@
 {
     "require-dev": {
         "szepeviktor/phpstan-wordpress": "^1.2",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*"
     },
     "scripts": {
         "post-autoload-dump": [

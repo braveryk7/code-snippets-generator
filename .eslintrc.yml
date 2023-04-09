@@ -1,0 +1,52 @@
+env:
+  browser: true
+  node: true
+  es6: true
+extends:
+  - plugin:@wordpress/eslint-plugin/recommended-with-formatting
+  - plugin:@typescript-eslint/recommended
+  - plugin:import/warnings
+ignorePatterns:
+  - jest.config.js
+  - webpack.config.js
+overrides: 
+-
+  files: 
+  - "src/types/*.ts"
+  rules: 
+    camelcase: "off"
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: "./tsconfig.json"
+plugins:
+  - import
+root: true
+rules:
+  max-len:
+    - 2
+    - code: 100
+  import/order:
+    - warn
+    - groups:
+        - builtin
+        - external
+        - parent
+        - - internal
+          - sibling
+        - object
+        - type
+        - index
+      pathGroups:
+        - pattern: "src/types/**"
+          group: type
+          position: after
+        - pattern: "src/**"
+          group: object
+          position: before
+      alphabetize:
+        order: asc
+      newlines-between: always
+settings: 
+  import/resolver: 
+    typescript: 
+      project: "./"

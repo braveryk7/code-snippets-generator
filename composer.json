@@ -6,6 +6,7 @@
         "wplint-set": "./vendor/bin/phpcs --config-set default_standard WordPress",
         "wplint-rules": "./vendor/bin/phpcs -i",
         "phpcb": "./vendor/bin/phpcs --standard=ruleset.xml",
-        "phpstan": "./vendor/bin/phpstan analyse . -c ./phpstan.neon --memory-limit 2G"
+        "phpstan": "./vendor/bin/phpstan analyse . -c ./phpstan.neon --memory-limit 2G",
+        "test": "./vendor/bin/phpunit tests --testdox"
     }
 }

@@ -1,4 +1,4 @@
-import { render, useState } from '@wordpress/element';
+import { useState, createRoot } from '@wordpress/element';
 
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
@@ -19,4 +19,8 @@ const CodeSnippetsGenerator = () => {
 	);
 };
 
-render( <CodeSnippetsGenerator />, document.getElementById( 'code-snippets-generator' ) );
+const container = document.getElementById( 'code-snippets-generator' );
+if ( container ) {
+	const root = createRoot( container );
+	root.render( <CodeSnippetsGenerator /> );
+}

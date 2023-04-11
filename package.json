@@ -16,11 +16,16 @@
   "author": "Ken-chan",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/wordpress__components": "^23.0.1",
     "@wordpress/env": "^5.15.0",
     "@wordpress/scripts": "^26.1.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "stylelint-order": "^6.0.3",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@wordpress/components": "^23.7.0"
   }
 }

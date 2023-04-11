@@ -44,9 +44,21 @@ export const ShowPHPCode = ( props: { affiliateCode: string } ) => {
 		createPHPCode( affiliateCode );
 	}, [ affiliateCode, currentNowDate ] );
 
+	const copyToClipboard = ( e: React.MouseEvent<HTMLTextAreaElement, MouseEvent> ) => {
+		const target = e.target as HTMLTextAreaElement;
+		target.select();
+		document.execCommand( 'copy' );
+	};
+
 	return (
 		<>
-			<textarea className="cxn-show-php" rows={ 10 } value={ PHPCode } readOnly />
+			<textarea
+				className="cxn-show-php"
+				rows={ 7 }
+				value={ PHPCode }
+				readOnly
+				onClick={ ( e ) => copyToClipboard( e ) }
+			/>
 		</>
 	);
 };

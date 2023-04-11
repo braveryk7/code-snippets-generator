@@ -4,6 +4,7 @@ import { useState, createRoot } from '@wordpress/element';
 
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
+import { ShowShortCode } from 'src/components/ShowShortCode';
 import { ShowUsage } from 'src/components/ShowUsage';
 
 const CodeSnippetsGenerator = () => {
@@ -26,6 +27,7 @@ const CodeSnippetsGenerator = () => {
 				characterString={ characterString }
 				setCharacterString={ setCharacterString }
 			/>
+			<ShowShortCode />
 			<ShowUsage characterString={ characterString } />
 		</div>
 	);

@@ -1,9 +1,10 @@
+import './scss/index.scss';
+
 import { useState, createRoot } from '@wordpress/element';
 
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
-
-import './scss/index.scss';
+import { ShowUsage } from 'src/components/ShowUsage';
 
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
@@ -17,6 +18,7 @@ const CodeSnippetsGenerator = () => {
 				setAffiliateCode={ setAffiliateCode }
 			/>
 			<ShowPHPCode affiliateCode={ affiliateCode } />
+			<ShowUsage />
 		</div>
 	);
 };

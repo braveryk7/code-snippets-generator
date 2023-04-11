@@ -1,9 +1,17 @@
+import { Dispatch, SetStateAction } from 'react';
+
 import { useEffect, useState } from '@wordpress/element';
 
-export const ShowPHPCode = ( props: { affiliateCode: string } ) => {
-	const [ PHPCode, setPHPCode ] = useState( '' );
+export const ShowPHPCode = ( props:
+	{
+		affiliateCode: string,
+		PHPCode: string,
+		setPHPCode: Dispatch< SetStateAction< string > >
+		characterString: string,
+		setCharacterString: Dispatch< SetStateAction< string > >
+	} ) => {
 	const [ currentNowDate, setCurrentNowData ] = useState( '' );
-	const { affiliateCode } = props;
+	const { affiliateCode, PHPCode, setPHPCode, characterString, setCharacterString } = props;
 
 	const getNowDate = () => {
 		const now = new Date();
@@ -26,23 +34,26 @@ export const ShowPHPCode = ( props: { affiliateCode: string } ) => {
 
 			const isAnchor = affiliateCode.match( /<a.*>(.*)<\/a>/ );
 
-			const characterString = () => {
+			const getCharacterString = () => {
 				if ( isAnchor ) {
-					return isAnchor[ 1 ] || `affiliate_link_${ currentNowDate }`;
+					setCharacterString( isAnchor[ 1 ] || `affiliate_link_${ currentNowDate }` );
+				} else {
+					setCharacterString( `link_${ currentNowDate }` );
 				}
-				return `link_${ currentNowDate }`;
 			};
+
+			getCharacterString();
 
 			const defaultCode =
 				`function ${ functionName }() {` + '\n' +
 				`	return '${ value }';` + '\n' +
 				'}' + '\n' +
-				`add_shortcode('${ characterString() }', '${ functionName }');`;
+				`add_shortcode('${ characterString }', '${ functionName }');`;
 			setPHPCode( defaultCode );
 		};
 
 		createPHPCode( affiliateCode );
-	}, [ affiliateCode, currentNowDate ] );
+	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
 
 	const copyToClipboard = ( e: React.MouseEvent<HTMLTextAreaElement, MouseEvent> ) => {
 		const target = e.target as HTMLTextAreaElement;

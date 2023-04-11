@@ -1,12 +1,15 @@
+import './scss/index.scss';
+
 import { useState, createRoot } from '@wordpress/element';
 
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
-
-import './scss/index.scss';
+import { ShowUsage } from 'src/components/ShowUsage';
 
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
+	const [ PHPCode, setPHPCode ] = useState( '' );
+	const [ characterString, setCharacterString ] = useState( '' );
 	return (
 		<div>
 			<h2>Code Snippetsリンク生成ツール</h2>
@@ -16,7 +19,14 @@ const CodeSnippetsGenerator = () => {
 			<InputAffiliateCode
 				setAffiliateCode={ setAffiliateCode }
 			/>
-			<ShowPHPCode affiliateCode={ affiliateCode } />
+			<ShowPHPCode
+				affiliateCode={ affiliateCode }
+				PHPCode={ PHPCode }
+				setPHPCode={ setPHPCode }
+				characterString={ characterString }
+				setCharacterString={ setCharacterString }
+			/>
+			<ShowUsage characterString={ characterString } />
 		</div>
 	);
 };

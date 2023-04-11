@@ -3,6 +3,8 @@ import { useState, createRoot } from '@wordpress/element';
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
 
+import './scss/index.scss';
+
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
 	return (

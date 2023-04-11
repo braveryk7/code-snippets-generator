@@ -8,6 +8,7 @@ import { ShowUsage } from 'src/components/ShowUsage';
 
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
+	const [ PHPCode, setPHPCode ] = useState( '' );
 	return (
 		<div>
 			<h2>Code Snippetsリンク生成ツール</h2>
@@ -17,7 +18,11 @@ const CodeSnippetsGenerator = () => {
 			<InputAffiliateCode
 				setAffiliateCode={ setAffiliateCode }
 			/>
-			<ShowPHPCode affiliateCode={ affiliateCode } />
+			<ShowPHPCode
+				affiliateCode={ affiliateCode }
+				PHPCode={ PHPCode }
+				setPHPCode={ setPHPCode }
+			/>
 			<ShowUsage />
 		</div>
 	);

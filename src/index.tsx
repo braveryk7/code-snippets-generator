@@ -27,7 +27,7 @@ const CodeSnippetsGenerator = () => {
 				characterString={ characterString }
 				setCharacterString={ setCharacterString }
 			/>
-			<ShowShortCode />
+			<ShowShortCode characterString={ characterString } />
 			<ShowUsage characterString={ characterString } />
 		</div>
 	);

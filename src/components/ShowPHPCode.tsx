@@ -46,7 +46,7 @@ export const ShowPHPCode = ( props: { affiliateCode: string } ) => {
 
 	return (
 		<>
-			<textarea rows={ 10 } value={ PHPCode } readOnly />
+			<textarea className="cxn-show-php" rows={ 10 } value={ PHPCode } readOnly />
 		</>
 	);
 };

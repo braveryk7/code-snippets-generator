@@ -57,8 +57,7 @@ export const ShowPHPCode = ( props:
 
 	const copyToClipboard = ( e: React.MouseEvent<HTMLTextAreaElement, MouseEvent> ) => {
 		const target = e.target as HTMLTextAreaElement;
-		target.select();
-		document.execCommand( 'copy' );
+		navigator.clipboard.writeText( target.value );
 	};
 
 	return (

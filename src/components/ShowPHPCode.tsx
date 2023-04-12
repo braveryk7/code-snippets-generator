@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
+import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 
 export const ShowPHPCode = ( props:
@@ -60,6 +61,11 @@ export const ShowPHPCode = ( props:
 		navigator.clipboard.writeText( target.value );
 	};
 
+	const copyToClipboardButton = ( ) => {
+		const target = document.querySelector( '.cxn-show-php' ) as HTMLTextAreaElement;
+		navigator.clipboard.writeText( target.value );
+	};
+
 	return (
 		<>
 			<label
@@ -68,6 +74,13 @@ export const ShowPHPCode = ( props:
 			>
 				PHPコード
 			</label>
+			<Button
+				className="cxn-copy"
+				variant="secondary"
+				onClick={ ( ) => copyToClipboardButton( ) }
+			>
+				コピーする
+			</Button>
 			<textarea
 				className="cxn-show-php"
 				rows={ 7 }

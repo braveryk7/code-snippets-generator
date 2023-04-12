@@ -3,6 +3,8 @@ import { Dispatch, SetStateAction } from 'react';
 import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 
+import { copyToClipboard } from 'src/utils/copyToClipboard';
+
 export const ShowPHPCode = ( props:
 	{
 		affiliateCode: string,
@@ -55,16 +57,6 @@ export const ShowPHPCode = ( props:
 
 		createPHPCode( affiliateCode );
 	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
-
-	const copyToClipboard = (
-		selector: keyof HTMLElementTagNameMap,
-		e?: React.MouseEvent<HTMLTextAreaElement, MouseEvent>,
-	) => {
-		const target = e
-			? e.target as HTMLTextAreaElement
-			: document.querySelector( selector ) as HTMLTextAreaElement;
-		navigator.clipboard.writeText( target.value );
-	};
 
 	return (
 		<>

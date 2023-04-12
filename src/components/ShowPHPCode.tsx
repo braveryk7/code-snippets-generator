@@ -60,7 +60,7 @@ export const ShowPHPCode = ( props:
 
 	return (
 		<>
-			<div className="cxn-php-code-header-wrapper">
+			<div className="cxn-form-header-wrapper">
 				<label
 					className="cxn-label"
 					htmlFor="show-php"

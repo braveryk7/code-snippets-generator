@@ -1,6 +1,6 @@
 export const copyToClipboard = (
 	selector: keyof HTMLElementTagNameMap,
-	e?: React.MouseEvent<HTMLTextAreaElement, MouseEvent>,
+	e?: React.MouseEvent<HTMLElement, MouseEvent>,
 ) => {
 	const target = e
 		? e.target as HTMLTextAreaElement

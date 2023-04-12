@@ -25,4 +25,14 @@
 		transition: box-shadow 0.1s linear;
 		width: 100%;
 	}
+
+	&-php-code-header-wrapper {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&-copy {
+		margin-left: auto;
+		text-align: right;
+	}
 }

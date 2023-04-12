@@ -32,6 +32,7 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 				id="show-shortcode"
 				value={ `[${ characterString }]` }
 				readOnly
+				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, e ) }
 			/>
 		</>
 	);

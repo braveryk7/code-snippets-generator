@@ -1,6 +1,9 @@
 import { Dispatch, SetStateAction } from 'react';
 
+import { Button } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
+
+import { copyToClipboard } from 'src/utils/copyToClipboard';
 
 export const ShowPHPCode = ( props:
 	{
@@ -55,26 +58,32 @@ export const ShowPHPCode = ( props:
 		createPHPCode( affiliateCode );
 	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
 
-	const copyToClipboard = ( e: React.MouseEvent<HTMLTextAreaElement, MouseEvent> ) => {
-		const target = e.target as HTMLTextAreaElement;
-		target.select();
-		document.execCommand( 'copy' );
-	};
-
 	return (
 		<>
-			<label
-				className="cxn-label"
-				htmlFor="show-shortcode"
-			>
-				PHPコード
-			</label>
+			<div className="cxn-form-header-wrapper">
+				<label
+					className="cxn-label"
+					htmlFor="show-php"
+				>
+					PHPコード
+				</label>
+				<Button
+					className="cxn-copy"
+					variant="secondary"
+					onClick={
+						( ) => copyToClipboard( '.cxn-show-php' as keyof HTMLElementTagNameMap )
+					}
+				>
+					コピーする
+				</Button>
+			</div>
 			<textarea
+				id="show-php"
 				className="cxn-show-php"
 				rows={ 7 }
 				value={ PHPCode }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( e ) }
+				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, e ) }
 			/>
 		</>
 	);

@@ -25,4 +25,14 @@
 		transition: box-shadow 0.1s linear;
 		width: 100%;
 	}
+
+	&-form-header-wrapper {
+		align-items: center;
+		display: flex;
+	}
+
+	&-copy {
+		margin-left: auto;
+		text-align: right;
+	}
 }

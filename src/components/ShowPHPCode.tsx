@@ -71,7 +71,7 @@ export const ShowPHPCode = ( props:
 			<div className="cxn-php-code-header-wrapper">
 				<label
 					className="cxn-label"
-					htmlFor="show-shortcode"
+					htmlFor="show-php"
 				>
 					PHPコード
 				</label>
@@ -86,6 +86,7 @@ export const ShowPHPCode = ( props:
 				</Button>
 			</div>
 			<textarea
+				id="show-php"
 				className="cxn-show-php"
 				rows={ 7 }
 				value={ PHPCode }

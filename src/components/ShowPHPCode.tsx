@@ -68,19 +68,23 @@ export const ShowPHPCode = ( props:
 
 	return (
 		<>
-			<label
-				className="cxn-label"
-				htmlFor="show-shortcode"
-			>
-				PHPコード
-			</label>
-			<Button
-				className="cxn-copy"
-				variant="secondary"
-				onClick={ ( ) => copyToClipboard( '.cxn-show-php' as keyof HTMLElementTagNameMap ) }
-			>
-				コピーする
-			</Button>
+			<div className="cxn-php-code-header-wrapper">
+				<label
+					className="cxn-label"
+					htmlFor="show-shortcode"
+				>
+					PHPコード
+				</label>
+				<Button
+					className="cxn-copy"
+					variant="secondary"
+					onClick={
+						( ) => copyToClipboard( '.cxn-show-php' as keyof HTMLElementTagNameMap )
+					}
+				>
+					コピーする
+				</Button>
+			</div>
 			<textarea
 				className="cxn-show-php"
 				rows={ 7 }

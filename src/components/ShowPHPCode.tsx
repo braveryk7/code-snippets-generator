@@ -63,6 +63,12 @@ export const ShowPHPCode = ( props:
 
 	return (
 		<>
+			<label
+				className="cxn-label"
+				htmlFor="show-shortcode"
+			>
+				PHPコード
+			</label>
 			<textarea
 				className="cxn-show-php"
 				rows={ 7 }

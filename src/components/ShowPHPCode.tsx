@@ -56,13 +56,13 @@ export const ShowPHPCode = ( props:
 		createPHPCode( affiliateCode );
 	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
 
-	const copyToClipboard = ( e: React.MouseEvent<HTMLTextAreaElement, MouseEvent> ) => {
-		const target = e.target as HTMLTextAreaElement;
-		navigator.clipboard.writeText( target.value );
-	};
-
-	const copyToClipboardButton = ( ) => {
-		const target = document.querySelector( '.cxn-show-php' ) as HTMLTextAreaElement;
+	const copyToClipboard = (
+		selector: keyof HTMLElementTagNameMap,
+		e?: React.MouseEvent<HTMLTextAreaElement, MouseEvent>,
+	) => {
+		const target = e
+			? e.target as HTMLTextAreaElement
+			: document.querySelector( selector ) as HTMLTextAreaElement;
 		navigator.clipboard.writeText( target.value );
 	};
 
@@ -77,7 +77,7 @@ export const ShowPHPCode = ( props:
 			<Button
 				className="cxn-copy"
 				variant="secondary"
-				onClick={ ( ) => copyToClipboardButton( ) }
+				onClick={ ( ) => copyToClipboard( '.cxn-show-php' as keyof HTMLElementTagNameMap ) }
 			>
 				コピーする
 			</Button>
@@ -86,7 +86,7 @@ export const ShowPHPCode = ( props:
 				rows={ 7 }
 				value={ PHPCode }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( e ) }
+				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, e ) }
 			/>
 		</>
 	);

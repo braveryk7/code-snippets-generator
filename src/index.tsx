@@ -24,7 +24,7 @@ const CodeSnippetsGenerator = () => {
 						setAffiliateCode={ setAffiliateCode }
 					/>
 				</TimelineItem>
-				<TimelineItem itemNumber={ 2 } itemHeading="PHPコード">
+				<TimelineItem itemNumber={ 2 } itemHeading="PHPコードをコピーして、Code Snippetsに貼り付ける">
 					<ShowPHPCode
 						affiliateCode={ affiliateCode }
 						PHPCode={ PHPCode }
@@ -33,7 +33,7 @@ const CodeSnippetsGenerator = () => {
 						setCharacterString={ setCharacterString }
 					/>
 				</TimelineItem>
-				<TimelineItem itemNumber={ 3 } itemHeading="ショートコード">
+				<TimelineItem itemNumber={ 3 } itemHeading="ショートコードを記事の本文に挿入する">
 					<ShowShortCode characterString={ characterString } />
 				</TimelineItem>
 			</div>

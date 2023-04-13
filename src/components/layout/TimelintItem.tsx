@@ -12,7 +12,7 @@ export const TimelineItem = (
 		<div className="cxn-timeline-item">
 			<span className="cxn-timeline-item-number">{ itemNumber }</span>
 			<h4 className="cxn-timeline-item-heading">{ itemHeading }</h4>
-			<div className="cxn-itemContent">
+			<div className="cxn-item-content">
 				{ children }
 			</div>
 		</div>

@@ -13,7 +13,7 @@ export const TimelineItem = (
 			<span className="timeline-item-number">{ itemNumber }</span>
 			<h4 className="timeline-item-heading">{ itemHeading }</h4>
 			<div className="itemContent">
-				{ children };
+				{ children }
 			</div>
 		</div>
 	);

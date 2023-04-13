@@ -22,10 +22,10 @@
 			margin-bottom: 20px !important;
 		}
 
-		@mixin timeline-item-before {
+		@mixin timeline-item-before($height) {
 			background-color: #c0c0c0;
 			content: "";
-			height: 120%;
+			height: $height;
 			left: 0%;
 			position: absolute;
 			top: 70%;
@@ -35,15 +35,14 @@
 
 		&::before {
 
-			@include timeline-item-before;
+			@include timeline-item-before(120%);
 		}
 
 		&:last-child {
 
 			&::before {
 
-				@include timeline-item-before;
-				height: 80%;
+				@include timeline-item-before(80%);
 			}
 		}
 	}

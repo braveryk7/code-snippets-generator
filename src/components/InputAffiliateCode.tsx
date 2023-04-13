@@ -1,6 +1,7 @@
+import { chevronDown } from '@wordpress/icons';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 
-import { TextControl } from '@wordpress/components';
+import { Icon, TextControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
 export const InputAffiliateCode = (
@@ -20,6 +21,11 @@ export const InputAffiliateCode = (
 				value={ formValue }
 				onChange={ ( value ) => setFormValue( value ) }
 			/>
+			<div className="cxn-advanced-settings">
+				高度な設定
+				<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 16 } />
+				<div className="cxn-advanced-settings-item"></div>
+			</div>
 		</>
 	);
 };

@@ -18,23 +18,25 @@ const CodeSnippetsGenerator = () => {
 			<p>WordPressプラグインのCode Snippetsを使って主にアフィリエイトコード等のリンクを生成するツールです。</p>
 			<p>以下の入力フォームにアフィリエイトコードをコピー&ペーストすると<code>function</code>から始まるPHPコードが出力されます。</p>
 			<p>Code Snippetsに出力されたコードをペーストし保存するとWordPressで使用できるショートコードが使えるようになります。</p>
-			<TimelineItem itemNumber={ 1 } itemHeading="アフィリエイトコードを入力">
-				<InputAffiliateCode
-					setAffiliateCode={ setAffiliateCode }
-				/>
-			</TimelineItem>
-			<TimelineItem itemNumber={ 2 } itemHeading="PHPコード">
-				<ShowPHPCode
-					affiliateCode={ affiliateCode }
-					PHPCode={ PHPCode }
-					setPHPCode={ setPHPCode }
-					characterString={ characterString }
-					setCharacterString={ setCharacterString }
-				/>
-			</TimelineItem>
-			<TimelineItem itemNumber={ 3 } itemHeading="ショートコード">
-				<ShowShortCode characterString={ characterString } />
-			</TimelineItem>
+			<div className="cxn-timeline">
+				<TimelineItem itemNumber={ 1 } itemHeading="アフィリエイトコードを入力">
+					<InputAffiliateCode
+						setAffiliateCode={ setAffiliateCode }
+					/>
+				</TimelineItem>
+				<TimelineItem itemNumber={ 2 } itemHeading="PHPコード">
+					<ShowPHPCode
+						affiliateCode={ affiliateCode }
+						PHPCode={ PHPCode }
+						setPHPCode={ setPHPCode }
+						characterString={ characterString }
+						setCharacterString={ setCharacterString }
+					/>
+				</TimelineItem>
+				<TimelineItem itemNumber={ 3 } itemHeading="ショートコード">
+					<ShowShortCode characterString={ characterString } />
+				</TimelineItem>
+			</div>
 			<ShowUsage characterString={ characterString } />
 		</div>
 	);

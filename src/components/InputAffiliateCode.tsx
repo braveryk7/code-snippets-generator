@@ -23,7 +23,7 @@ export const InputAffiliateCode = (
 			/>
 			<div className="cxn-advanced-settings">
 				高度な設定
-				<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 16 } />
+				<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 24 } />
 				<div className="cxn-advanced-settings-item"></div>
 			</div>
 		</>

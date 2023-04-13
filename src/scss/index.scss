@@ -1,11 +1,50 @@
 .cxn {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
+
+	&-timeline {
+		background-color: #474747;
+		border-radius: 15px;
+		margin-bottom: 30px;
+		padding: 50px !important;
+	}
+
+	&-timeline-item {
+		margin-bottom: 30px;
+		padding: 5px 35px 5px 35px;
+		position: relative;
+
+		&-heading {
+			border-bottom: 2px solid #3572f4 !important;
+			border-top: 0 !important;
+			color: #ffffffda;
+		}
+	}
+
+	&-timeline-item-number {
+		background-color: #fff;
+		border: 1px solid #949494;
+		border-radius: 50%;
+		display: inline-block;
+		font-size: 0.8em;
+		font-weight: 500;
+		height: 30px;
+		left: 20px;
+		line-height: 30px;
+		margin-left: -35px;
+		margin-right: 10px;
+		position: absolute;
+		text-align: center;
+		top: 13px;
+		width: 30px;
+	}
+
 	&-show-php {
 		font-size: 0.8em;
 	}
 
 	&-label {
+		color: #fff;
 		display: inline-block;
 		font-size: 11px;
 		font-weight: 500;
@@ -32,6 +71,8 @@
 	}
 
 	&-copy {
+		background-color: #3572f4 !important;
+		color: #fff !important;
 		margin-left: auto;
 		text-align: right;
 	}

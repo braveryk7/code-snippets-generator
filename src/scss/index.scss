@@ -60,9 +60,17 @@
 			text-transform: uppercase;
 		}
 
+		.cxn-label {
+			margin-bottom: -20px;
+		}
+
 		input,
 		textarea {
-			font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+			border-radius: 2px;
+			font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif !important;
+			font-size: 14px !important;
+			line-height: normal;
+			padding: 6px 8px !important;
 		}
 	}
 

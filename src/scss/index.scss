@@ -39,19 +39,22 @@
 		width: 30px;
 	}
 
-	&-show-php {
-		font-size: 0.8em;
+	&-item-content {
+
+		label {
+			color: #fff;
+			display: inline-block;
+			font-size: 11px;
+			font-weight: 500;
+			line-height: 1.4;
+			margin-bottom: calc(8px);
+			padding: 0;
+			text-transform: uppercase;
+		}
 	}
 
-	&-label {
-		color: #fff;
-		display: inline-block;
-		font-size: 11px;
-		font-weight: 500;
-		line-height: 1.4;
-		margin-bottom: calc(8px);
-		padding: 0;
-		text-transform: uppercase;
+	&-show-php {
+		font-size: 0.8em;
 	}
 
 	&-show-shortcode {

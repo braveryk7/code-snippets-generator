@@ -22,8 +22,10 @@ export const InputAffiliateCode = (
 				onChange={ ( value ) => setFormValue( value ) }
 			/>
 			<div className="cxn-advanced-settings">
-				高度な設定
-				<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 24 } />
+				<span className="cxn-advanced-settings-switch">
+					高度な設定
+					<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 24 } />
+				</span>
 				<div className="cxn-advanced-settings-item"></div>
 			</div>
 		</>

@@ -4,10 +4,10 @@ export const TimelineItem = (
 	props: {
 		itemNumber: number,
 		itemHeading: string
+		children: ReactNode
 	},
-	children: ReactNode
 ) => {
-	const { itemNumber, itemHeading } = props;
+	const { itemNumber, itemHeading, children } = props;
 	return (
 		<div className="timeline-item">
 			<span className="timeline-item-number">{ itemNumber }</span>

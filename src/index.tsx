@@ -13,7 +13,7 @@ const CodeSnippetsGenerator = () => {
 	const [ PHPCode, setPHPCode ] = useState( '' );
 	const [ characterString, setCharacterString ] = useState( '' );
 	return (
-		<div>
+		<div className="cxn-code-snippets-generator-wrapper">
 			<h2>Code Snippetsリンク生成ツール</h2>
 			<p>WordPressプラグインのCode Snippetsを使って主にアフィリエイトコード等のリンクを生成するツールです。</p>
 			<p>以下の入力フォームにアフィリエイトコードをコピー&ペーストすると<code>function</code>から始まるPHPコードが出力されます。</p>

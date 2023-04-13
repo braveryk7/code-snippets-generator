@@ -20,11 +20,19 @@ const CodeSnippetsGenerator = () => {
 			<p>Code Snippetsに出力されたコードをペーストし保存するとWordPressで使用できるショートコードが使えるようになります。</p>
 			<div className="cxn-timeline">
 				<TimelineItem itemNumber={ 1 } itemHeading="アフィリエイトコードを入力">
+					<p>
+						ASPのアフィリエイトコードをコピーしてペーストしてください。
+					</p>
 					<InputAffiliateCode
 						setAffiliateCode={ setAffiliateCode }
 					/>
 				</TimelineItem>
 				<TimelineItem itemNumber={ 2 } itemHeading="PHPコードをコピーして、Code Snippetsに貼り付ける">
+					<p>
+						コピーボタン、もしくはテキストエリアをクリックするとPHPコードがコピーされます。<br />
+						コピーしたPHPコードをCode Snippetsに貼り付けて保存してください。<br />
+						その際余分な空白や空行が入ってしまわないように注意してください。
+					</p>
 					<ShowPHPCode
 						affiliateCode={ affiliateCode }
 						PHPCode={ PHPCode }
@@ -34,6 +42,10 @@ const CodeSnippetsGenerator = () => {
 					/>
 				</TimelineItem>
 				<TimelineItem itemNumber={ 3 } itemHeading="ショートコードを記事の本文に挿入する">
+					<p>
+						ショートコードを記事の本文に挿入し、正しくアフィリエイトコードが出力されている確認してください。<br />
+						正常に出力されない場合、もう一度ASPのアフィリエイトコードをコピーしてペーストし直してください。
+					</p>
 					<ShowShortCode characterString={ characterString } />
 				</TimelineItem>
 			</div>

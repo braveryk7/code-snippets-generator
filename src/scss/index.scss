@@ -18,7 +18,7 @@
 			margin-bottom: 20px !important;
 		}
 
-		&::before {
+		@mixin timeline-item-before {
 			background-color: #c0c0c0;
 			content: "";
 			height: 120%;
@@ -27,6 +27,20 @@
 			top: 70%;
 			transform: translate(-50%, -50%);
 			width: 2px;
+		}
+
+		&::before {
+
+			@include timeline-item-before;
+		}
+
+		&:last-child {
+
+			&::before {
+
+				@include timeline-item-before;
+				height: 80%;
+			}
 		}
 	}
 
@@ -49,6 +63,7 @@
 	}
 
 	&-item-content {
+		margin-left: 10px;
 
 		label {
 			color: #fff;
@@ -71,6 +86,11 @@
 			font-size: 14px !important;
 			line-height: normal;
 			padding: 6px 8px !important;
+		}
+
+		p {
+			color: #f7f7f7;
+			font-size: 0.8em;
 		}
 	}
 

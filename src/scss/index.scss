@@ -129,6 +129,13 @@
 			fill: #fff;
 			position: relative;
 		}
+
+		&-item {
+
+			&-shortcode {
+				width: 50%;
+			}
+		}
 	}
 
 	&-show-php {

@@ -11,6 +11,7 @@ import { TimelineItem } from 'src/components/layout/TimelintItem';
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
 	const [ advancedShortcode, setAdvancedShortcode ] = useState( '' );
+	const [ advancedFunctionName, setAdvancedFunctionName ] = useState( '' );
 	const [ PHPCode, setPHPCode ] = useState( '' );
 	const [ characterString, setCharacterString ] = useState( '' );
 
@@ -28,6 +29,7 @@ const CodeSnippetsGenerator = () => {
 					<InputAffiliateCode
 						setAffiliateCode={ setAffiliateCode }
 						setAdvancedShortcode={ setAdvancedShortcode }
+						setAdvancedFunctionName={ setAdvancedFunctionName }
 					/>
 				</TimelineItem>
 				<TimelineItem itemNumber={ 2 } itemHeading="PHPコードをコピーして、Code Snippetsに貼り付ける">
@@ -39,6 +41,7 @@ const CodeSnippetsGenerator = () => {
 					<ShowPHPCode
 						affiliateCode={ affiliateCode }
 						advancedShortcode={ advancedShortcode }
+						advancedFunctionName={ advancedFunctionName }
 						PHPCode={ PHPCode }
 						setPHPCode={ setPHPCode }
 						characterString={ characterString }

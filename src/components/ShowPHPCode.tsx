@@ -8,13 +8,21 @@ import { copyToClipboard } from 'src/utils/copyToClipboard';
 export const ShowPHPCode = ( props:
 	{
 		affiliateCode: string,
+		advancedShortcode: string,
 		PHPCode: string,
 		setPHPCode: Dispatch< SetStateAction< string > >
 		characterString: string,
 		setCharacterString: Dispatch< SetStateAction< string > >
 	} ) => {
 	const [ currentNowDate, setCurrentNowData ] = useState( '' );
-	const { affiliateCode, PHPCode, setPHPCode, characterString, setCharacterString } = props;
+	const {
+		affiliateCode,
+		advancedShortcode,
+		PHPCode,
+		setPHPCode,
+		characterString,
+		setCharacterString,
+	} = props;
 
 	const getNowDate = () => {
 		const now = new Date();
@@ -38,7 +46,9 @@ export const ShowPHPCode = ( props:
 			const isAnchor = affiliateCode.match( /<a.*>(.*)<\/a>/ );
 
 			const getCharacterString = () => {
-				if ( isAnchor ) {
+				if ( advancedShortcode ) {
+					setCharacterString( advancedShortcode );
+				} else if ( isAnchor ) {
 					setCharacterString( isAnchor[ 1 ] || `affiliate_link_${ currentNowDate }` );
 				} else {
 					setCharacterString( `link_${ currentNowDate }` );
@@ -56,7 +66,12 @@ export const ShowPHPCode = ( props:
 		};
 
 		createPHPCode( affiliateCode );
-	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
+	}, [ affiliateCode,
+		advancedShortcode,
+		setPHPCode, currentNowDate,
+		characterString,
+		setCharacterString,
+	] );
 
 	return (
 		<>

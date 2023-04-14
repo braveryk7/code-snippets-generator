@@ -134,7 +134,10 @@
 			container-type: inline-size;
 
 			&-shortcode {
-				width: 50%;
+
+				@container (min-width: 600px) {
+					width: 50%;
+				}
 			}
 
 			&-container {

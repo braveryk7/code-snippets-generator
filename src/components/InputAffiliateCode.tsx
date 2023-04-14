@@ -36,7 +36,7 @@ export const InputAffiliateCode = (
 				value={ formValue }
 				onChange={ ( value ) => setFormValue( value ) }
 			/>
-			<details className="cxn-advanced-settings">
+			<details className="cxn-advanced-settings" open>
 				<summary className="cxn-advanced-settings-switch">
 					高度な設定
 					<Icon
@@ -54,14 +54,24 @@ export const InputAffiliateCode = (
 						value={ shortcode }
 						onChange={ ( value ) => setShortcode( value ) }
 					/>
-					<TextControl
-						className="cxn-advanced-settings-item-function-name"
-						label="関数名を任意の文字列に変更する"
-						placeholder="例: my_affiliate_link_1"
-						help="関数名を変更したい場合入力してください。よくわからない場合は空欄のままにしておいてください。"
-						value={ functionName }
-						onChange={ ( value ) => setFunctionName( value ) }
-					/>
+					<div className="cxn-advanced-settings-item-container">
+						<TextControl
+							className="cxn-advanced-settings-item-function-name-form"
+							label="関数名を任意の文字列に変更する"
+							placeholder="例: my_affiliate_link_1"
+							help="関数名を変更したい場合入力してください。よくわからない場合は空欄のままにしておいてください。"
+							value={ functionName }
+							onChange={ ( value ) => setFunctionName( value ) }
+						/>
+						<div className="cxn-advanced-settings-item-function-name-point">
+							<ul>
+								<li>1文字目はアルファベット[A-Z][a-z]、アンダーバー[_]のみ使用可能</li>
+								<li>2文字目以降は1文字目+数字[0-9]を使用可能</li>
+								<li>数字始まりやアンダーバー以外の記号はNG</li>
+								<li>日本語も使用できるが、基本的に使用しない方が良い</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</details>
 		</>

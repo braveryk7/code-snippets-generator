@@ -14,6 +14,7 @@ export const InputAffiliateCode = (
 	const [ formValue, setFormValue ] = useState( '' );
 	const [ shortcode, setShortcode ] = useState( '' );
 	const [ functionName, setFunctionName ] = useState( '' );
+	const [ validationMessage, setValidationMessage ] = useState( '' );
 	const { setAffiliateCode, setAdvancedShortcode, setAdvancedFunctionName } = props;
 
 	useEffect( () => {
@@ -25,6 +26,23 @@ export const InputAffiliateCode = (
 	}, [ shortcode, setAdvancedShortcode ] );
 
 	useEffect( () => {
+		if ( functionName ) {
+			setValidationMessage( '' );
+
+			switch ( true ) {
+				case ! functionName.match( /^[a-zA-Z_]/ ):
+					setValidationMessage( '関数名はアルファベット、もしくはアンダーバーで始めてください。' );
+					break;
+				case ! functionName.match( /^[a-zA-Z0-9_]+$/ ):
+					setValidationMessage( '関数名はアルファベット、数字、アンダーバーで構成してください。' );
+					break;
+				default:
+					setValidationMessage( '' );
+			}
+		} else {
+			setValidationMessage( '' );
+		}
+
 		setAdvancedFunctionName( functionName );
 	}, [ functionName, setAdvancedFunctionName ] );
 
@@ -62,14 +80,19 @@ export const InputAffiliateCode = (
 						</div>
 					</div>
 					<div className="cxn-advanced-settings-item-container">
-						<TextControl
-							className="cxn-advanced-settings-item-function-name-form"
-							label="関数名を任意の文字列に変更する"
-							placeholder="例: my_affiliate_link_1"
-							help="関数名を変更したい場合入力してください。よくわからない場合は空欄のままにしておいてください。"
-							value={ functionName }
-							onChange={ ( value ) => setFunctionName( value ) }
-						/>
+						<div className="cxn-advanced-settings-item-function-name-container">
+							<TextControl
+								className="cxn-advanced-settings-item-function-name-form"
+								label="関数名を任意の文字列に変更する"
+								placeholder="例: my_affiliate_link_1"
+								help="関数名を変更したい場合入力してください。よくわからない場合は空欄のままにしておいてください。"
+								value={ functionName }
+								onChange={ ( value ) => setFunctionName( value ) }
+							/>
+							<span className="cxn-advanced-settings-item-function-name-validation">
+								{ validationMessage }
+							</span>
+						</div>
 						<div className="cxn-advanced-settings-item-function-name-point">
 							<ul>
 								<li>1文字目はアルファベット[A-Z][a-z]、アンダーバー[_]のみ使用可能</li>

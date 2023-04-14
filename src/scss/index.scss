@@ -1,17 +1,31 @@
 .cxn {
 
+	&-code-snippets-generator-wrapper {
+		animation: fadeIn 0.8s ease;
+		container-type: inline-size;
+	}
+
 	&-timeline {
 		background-color: #474747;
 		border-radius: 15px;
 		color: #fff;
+		container-type: inline-size;
 		margin-bottom: 30px;
-		padding: 50px !important;
+		padding: 15px 20px 15px 35px;
+
+		@container (min-width: 600px) {
+			padding: 25px 50px;
+		}
 	}
 
 	&-timeline-item {
 		margin-bottom: 30px;
-		padding: 5px 35px 5px 35px;
+		padding-left: 35px;
 		position: relative;
+
+		@container (min-width: 600px) {
+			padding: 5px 35px 5px 35px;
+		}
 
 		&-heading {
 			border: 0 !important;
@@ -32,7 +46,7 @@
 
 		&::before {
 
-			@include timeline-item-before(120%);
+			@include timeline-item-before(131%);
 		}
 
 		&:last-child {
@@ -98,6 +112,7 @@
 
 		&-switch {
 			align-items: center;
+			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			text-align: center;
@@ -128,7 +143,6 @@
 		}
 
 		&-item {
-			container-type: inline-size;
 
 			&-shortcode {
 
@@ -153,19 +167,35 @@
 				}
 			}
 
-			&-function-name {
+			&-function {
 
-				@container (min-width: 600px) {
+				&-name {
 
-					&-form {
-						width: 50%;
+					&-validation {
+						color: #f3f300;
+						font-size: 0.8em;
 					}
 
-					&-point {
-						width: 50%;
+					&-container {
+						margin-bottom: 15px;
+					}
+
+					@container (min-width: 600px) {
+
+						&-container {
+							width: 50%;
+						}
+
+						&-point {
+							width: 50%;
+						}
 					}
 				}
 			}
+		}
+
+		details[open] &-item {
+			animation: fadeIn 0.8s ease;
 		}
 	}
 
@@ -195,5 +225,18 @@
 		color: #fff !important;
 		margin-left: auto;
 		text-align: right;
+	}
+}
+
+@keyframes fadeIn {
+
+	0% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
 	}
 }

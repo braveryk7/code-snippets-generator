@@ -134,6 +134,10 @@
 
 				@container (min-width: 600px) {
 					width: 50%;
+
+					&-point {
+						width: 50%;
+					}
 				}
 			}
 

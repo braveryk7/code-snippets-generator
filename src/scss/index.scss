@@ -10,7 +10,11 @@
 		color: #fff;
 		container-type: inline-size;
 		margin-bottom: 30px;
-		padding: 50px !important;
+		padding: 15px 20px 15px 35px;
+
+		@container (min-width: 600px) {
+			padding: 25px 50px !important;
+		}
 	}
 
 	&-timeline-item {

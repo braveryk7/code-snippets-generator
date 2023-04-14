@@ -8,11 +8,13 @@ export const InputAffiliateCode = (
 	props: {
 		setAffiliateCode: Dispatch< SetStateAction< string > >
 		setAdvancedShortcode: Dispatch< SetStateAction< string > >
+		setAdvancedFunctionName: Dispatch< SetStateAction< string > >
 	}
 ) => {
 	const [ formValue, setFormValue ] = useState( '' );
 	const [ shortcode, setShortcode ] = useState( '' );
-	const { setAffiliateCode, setAdvancedShortcode } = props;
+	const [ functionName, setFunctionName ] = useState( '' );
+	const { setAffiliateCode, setAdvancedShortcode, setAdvancedFunctionName } = props;
 
 	useEffect( () => {
 		setAffiliateCode( formValue );
@@ -21,6 +23,10 @@ export const InputAffiliateCode = (
 	useEffect( () => {
 		setAdvancedShortcode( shortcode );
 	}, [ shortcode, setAdvancedShortcode ] );
+
+	useEffect( () => {
+		setAdvancedFunctionName( functionName );
+	}, [ functionName, setAdvancedFunctionName ] );
 
 	return (
 		<>
@@ -47,6 +53,14 @@ export const InputAffiliateCode = (
 						help="分かりやすい値を設定しておくと便利です。日本語、数字、アルファベット、記号全て使用可能です。"
 						value={ shortcode }
 						onChange={ ( value ) => setShortcode( value ) }
+					/>
+					<TextControl
+						className="cxn-advanced-settings-item-function-name"
+						label="関数名を任意の文字列に変更する"
+						placeholder="例: my_affiliate_link_1"
+						help="関数名を変更したい場合入力してください。よくわからない場合は空欄のままにしておいてください。"
+						value={ functionName }
+						onChange={ ( value ) => setFunctionName( value ) }
 					/>
 				</div>
 			</details>

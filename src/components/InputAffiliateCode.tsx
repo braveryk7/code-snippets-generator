@@ -21,13 +21,17 @@ export const InputAffiliateCode = (
 				value={ formValue }
 				onChange={ ( value ) => setFormValue( value ) }
 			/>
-			<div className="cxn-advanced-settings">
-				<span className="cxn-advanced-settings-switch">
+			<details className="cxn-advanced-settings">
+				<summary className="cxn-advanced-settings-switch">
 					高度な設定
-					<Icon icon={ chevronDown } className="cxn-advanced-settings-icon" size={ 24 } />
-				</span>
+					<Icon
+						icon={ chevronDown }
+						className="cxn-advanced-settings-icon"
+						size={ 24 }
+					/>
+				</summary>
 				<div className="cxn-advanced-settings-item"></div>
-			</div>
+			</details>
 		</>
 	);
 };

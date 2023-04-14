@@ -8,6 +8,7 @@ export const InputAffiliateCode = (
 	props: { setAffiliateCode: Dispatch< SetStateAction< string > > }
 ) => {
 	const [ formValue, setFormValue ] = useState( '' );
+	const [ shortcode, setShortcode ] = useState( '' );
 	const { setAffiliateCode } = props;
 
 	useEffect( () => {
@@ -30,7 +31,16 @@ export const InputAffiliateCode = (
 						size={ 24 }
 					/>
 				</summary>
-				<div className="cxn-advanced-settings-item"></div>
+				<div className="cxn-advanced-settings-item">
+					<TextControl
+						className="cxn-advanced-settings-item-shortcode"
+						label="ショートコードを任意の文字列に変更する"
+						placeholder="例: アフィリエイトリンク1"
+						help="分かりやすい値を設定しておくと便利です。日本語、数字、アルファベット、記号全て使用可能です。"
+						value={ shortcode }
+						onChange={ ( value ) => setShortcode( value ) }
+					/>
+				</div>
 			</details>
 		</>
 	);

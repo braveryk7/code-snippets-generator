@@ -100,8 +100,29 @@
 	&-advanced-settings {
 
 		&-switch {
-			display: block;
+			align-items: center;
+			display: flex;
+			justify-content: center;
 			text-align: center;
+			white-space: nowrap;
+
+			@mixin switch-before($left) {
+				border-top: 1px solid #fff;
+				content: "";
+				width: 43%;
+			}
+
+			&::before {
+
+				@include switch-before(-36%);
+				margin-right: 15px;
+			}
+
+			&::after {
+
+				@include switch-before(16%);
+				margin-left: 15px;
+			}
 		}
 
 		&-icon {

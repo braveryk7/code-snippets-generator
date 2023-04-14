@@ -9,6 +9,7 @@ export const ShowPHPCode = ( props:
 	{
 		affiliateCode: string,
 		advancedShortcode: string,
+		advancedFunctionName: string
 		PHPCode: string,
 		setPHPCode: Dispatch< SetStateAction< string > >
 		characterString: string,
@@ -18,6 +19,7 @@ export const ShowPHPCode = ( props:
 	const {
 		affiliateCode,
 		advancedShortcode,
+		advancedFunctionName,
 		PHPCode,
 		setPHPCode,
 		characterString,
@@ -41,7 +43,7 @@ export const ShowPHPCode = ( props:
 
 	useEffect( () => {
 		const createPHPCode = ( value: string ) => {
-			const functionName = 'my_affiliate_link_' + currentNowDate;
+			const functionName = advancedFunctionName || `my_affiliate_link_${ currentNowDate }`;
 
 			const isAnchor = affiliateCode.match( /<a.*>(.*)<\/a>/ );
 
@@ -68,6 +70,7 @@ export const ShowPHPCode = ( props:
 		createPHPCode( affiliateCode );
 	}, [ affiliateCode,
 		advancedShortcode,
+		advancedFunctionName,
 		setPHPCode, currentNowDate,
 		characterString,
 		setCharacterString,

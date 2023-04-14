@@ -153,16 +153,19 @@
 				}
 			}
 
-			&-function-name {
+			&-function {
 
-				@container (min-width: 600px) {
+				&-name {
 
-					&-form {
-						width: 50%;
-					}
+					@container (min-width: 600px) {
 
-					&-point {
-						width: 50%;
+						&-container {
+							width: 50%;
+						}
+
+						&-point {
+							width: 50%;
+						}
 					}
 				}
 			}

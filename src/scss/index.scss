@@ -131,9 +131,35 @@
 		}
 
 		&-item {
+			container-type: inline-size;
 
 			&-shortcode {
 				width: 50%;
+			}
+
+			&-container {
+
+				@container (min-width: 600px) {
+					display: flex;
+				}
+			}
+
+			&-function-name {
+
+				@container (min-width: 600px) {
+
+					&-form {
+						width: 50%;
+					}
+
+					&-point {
+						width: 50%;
+					}
+				}
+
+				&-point {
+					font-size: 0.8em;
+				}
 			}
 		}
 	}

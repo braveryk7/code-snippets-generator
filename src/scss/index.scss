@@ -1,17 +1,26 @@
 .cxn {
 
+	&-code-snippets-generator-wrapper {
+		container-type: inline-size;
+	}
+
 	&-timeline {
 		background-color: #474747;
 		border-radius: 15px;
 		color: #fff;
+		container-type: inline-size;
 		margin-bottom: 30px;
 		padding: 50px !important;
 	}
 
 	&-timeline-item {
 		margin-bottom: 30px;
-		padding: 5px 35px 5px 35px;
+		padding-left: 35px;
 		position: relative;
+
+		@container (min-width: 600px) {
+			padding: 5px 35px 5px 35px;
+		}
 
 		&-heading {
 			border: 0 !important;
@@ -157,15 +166,19 @@
 
 				&-name {
 
+					&-validation {
+						color: #f3f300;
+						font-size: 0.8em;
+					}
+
+					&-container {
+						margin-bottom: 15px;
+					}
+
 					@container (min-width: 600px) {
 
 						&-container {
 							width: 50%;
-						}
-
-						&-validation {
-							color: #f3f300;
-							font-size: 0.8em;
 						}
 
 						&-point {

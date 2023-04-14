@@ -8,13 +8,23 @@ import { copyToClipboard } from 'src/utils/copyToClipboard';
 export const ShowPHPCode = ( props:
 	{
 		affiliateCode: string,
+		advancedShortcode: string,
+		advancedFunctionName: string
 		PHPCode: string,
 		setPHPCode: Dispatch< SetStateAction< string > >
 		characterString: string,
 		setCharacterString: Dispatch< SetStateAction< string > >
 	} ) => {
 	const [ currentNowDate, setCurrentNowData ] = useState( '' );
-	const { affiliateCode, PHPCode, setPHPCode, characterString, setCharacterString } = props;
+	const {
+		affiliateCode,
+		advancedShortcode,
+		advancedFunctionName,
+		PHPCode,
+		setPHPCode,
+		characterString,
+		setCharacterString,
+	} = props;
 
 	const getNowDate = () => {
 		const now = new Date();
@@ -33,12 +43,14 @@ export const ShowPHPCode = ( props:
 
 	useEffect( () => {
 		const createPHPCode = ( value: string ) => {
-			const functionName = 'my_affiliate_link_' + currentNowDate;
+			const functionName = advancedFunctionName || `my_affiliate_link_${ currentNowDate }`;
 
 			const isAnchor = affiliateCode.match( /<a.*>(.*)<\/a>/ );
 
 			const getCharacterString = () => {
-				if ( isAnchor ) {
+				if ( advancedShortcode ) {
+					setCharacterString( advancedShortcode );
+				} else if ( isAnchor ) {
 					setCharacterString( isAnchor[ 1 ] || `affiliate_link_${ currentNowDate }` );
 				} else {
 					setCharacterString( `link_${ currentNowDate }` );
@@ -56,7 +68,13 @@ export const ShowPHPCode = ( props:
 		};
 
 		createPHPCode( affiliateCode );
-	}, [ affiliateCode, setPHPCode, currentNowDate, characterString, setCharacterString ] );
+	}, [ affiliateCode,
+		advancedShortcode,
+		advancedFunctionName,
+		setPHPCode, currentNowDate,
+		characterString,
+		setCharacterString,
+	] );
 
 	return (
 		<>

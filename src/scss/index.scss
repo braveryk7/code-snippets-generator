@@ -3,6 +3,7 @@
 	&-timeline {
 		background-color: #474747;
 		border-radius: 15px;
+		color: #fff;
 		margin-bottom: 30px;
 		padding: 50px !important;
 	}
@@ -14,14 +15,14 @@
 
 		&-heading {
 			border: 0 !important;
-			color: #ffffffda;
+			color: #ffffffdc;
 			margin-bottom: 20px !important;
 		}
 
-		@mixin timeline-item-before {
+		@mixin timeline-item-before($height) {
 			background-color: #c0c0c0;
 			content: "";
-			height: 120%;
+			height: $height;
 			left: 0%;
 			position: absolute;
 			top: 70%;
@@ -31,15 +32,14 @@
 
 		&::before {
 
-			@include timeline-item-before;
+			@include timeline-item-before(120%);
 		}
 
 		&:last-child {
 
 			&::before {
 
-				@include timeline-item-before;
-				height: 80%;
+				@include timeline-item-before(80%);
 			}
 		}
 	}
@@ -48,6 +48,7 @@
 		background-color: #fff;
 		border: 1px solid #fff;
 		border-radius: 50%;
+		color: #404040;
 		display: inline-block;
 		font-size: 0.8em;
 		font-weight: 500;
@@ -66,7 +67,6 @@
 		margin-left: 10px;
 
 		label {
-			color: #fff;
 			display: inline-block;
 			font-size: 11px;
 			font-weight: 500;
@@ -91,6 +91,81 @@
 		p {
 			color: #f7f7f7;
 			font-size: 0.8em;
+		}
+	}
+
+	&-advanced-settings {
+
+		&-switch {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			white-space: nowrap;
+
+			@mixin switch-before($left) {
+				border-top: 1px solid #fff;
+				content: "";
+				width: 43%;
+			}
+
+			&::before {
+
+				@include switch-before(-36%);
+				margin-right: 15px;
+			}
+
+			&::after {
+
+				@include switch-before(16%);
+				margin-left: 15px;
+			}
+		}
+
+		&-icon {
+			fill: #fff;
+			position: relative;
+		}
+
+		&-item {
+			container-type: inline-size;
+
+			&-shortcode {
+
+				@container (min-width: 600px) {
+					width: 50%;
+
+					&-point {
+						width: 50%;
+					}
+				}
+			}
+
+			&-container {
+
+				@container (min-width: 600px) {
+					display: flex;
+					padding-top: 30px;
+				}
+
+				li {
+					font-size: 0.8em;
+				}
+			}
+
+			&-function-name {
+
+				@container (min-width: 600px) {
+
+					&-form {
+						width: 50%;
+					}
+
+					&-point {
+						width: 50%;
+					}
+				}
+			}
 		}
 	}
 

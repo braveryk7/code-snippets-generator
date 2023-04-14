@@ -10,10 +10,13 @@ import { TimelineItem } from 'src/components/layout/TimelintItem';
 
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
+	const [ advancedShortcode, setAdvancedShortcode ] = useState( '' );
+	const [ advancedFunctionName, setAdvancedFunctionName ] = useState( '' );
 	const [ PHPCode, setPHPCode ] = useState( '' );
 	const [ characterString, setCharacterString ] = useState( '' );
+
 	return (
-		<div>
+		<div className="cxn-code-snippets-generator-wrapper">
 			<h2>Code Snippetsリンク生成ツール</h2>
 			<p>WordPressプラグインのCode Snippetsを使って主にアフィリエイトコード等のリンクを生成するツールです。</p>
 			<p>以下の入力フォームにアフィリエイトコードをコピー&ペーストすると<code>function</code>から始まるPHPコードが出力されます。</p>
@@ -25,6 +28,8 @@ const CodeSnippetsGenerator = () => {
 					</p>
 					<InputAffiliateCode
 						setAffiliateCode={ setAffiliateCode }
+						setAdvancedShortcode={ setAdvancedShortcode }
+						setAdvancedFunctionName={ setAdvancedFunctionName }
 					/>
 				</TimelineItem>
 				<TimelineItem itemNumber={ 2 } itemHeading="PHPコードをコピーして、Code Snippetsに貼り付ける">
@@ -35,6 +40,8 @@ const CodeSnippetsGenerator = () => {
 					</p>
 					<ShowPHPCode
 						affiliateCode={ affiliateCode }
+						advancedShortcode={ advancedShortcode }
+						advancedFunctionName={ advancedFunctionName }
 						PHPCode={ PHPCode }
 						setPHPCode={ setPHPCode }
 						characterString={ characterString }

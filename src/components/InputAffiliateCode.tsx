@@ -46,18 +46,20 @@ export const InputAffiliateCode = (
 					/>
 				</summary>
 				<div className="cxn-advanced-settings-item">
-					<TextControl
-						className="cxn-advanced-settings-item-shortcode"
-						label="ショートコードを任意の文字列に変更する"
-						placeholder="例: アフィリエイトリンク1"
-						help="分かりやすい値を設定しておくと便利です。空欄の場合、自動生成されます。"
-						value={ shortcode }
-						onChange={ ( value ) => setShortcode( value ) }
-					/>
-					<div className="cxn-advanced-settings-item-shortcode-point">
-						<ul>
-							<li>日本語（ひらがな・カタカナ・漢字）、英数字、記号全て使用可能</li>
-						</ul>
+					<div className="cxn-advanced-settings-item-container">
+						<TextControl
+							className="cxn-advanced-settings-item-shortcode"
+							label="ショートコードを任意の文字列に変更する"
+							placeholder="例: アフィリエイトリンク1"
+							help="分かりやすい値を設定しておくと便利です。空欄の場合、自動生成されます。"
+							value={ shortcode }
+							onChange={ ( value ) => setShortcode( value ) }
+						/>
+						<div className="cxn-advanced-settings-item-shortcode-point">
+							<ul>
+								<li>日本語（ひらがな・カタカナ・漢字）、英数字、記号全て使用可能</li>
+							</ul>
+						</div>
 					</div>
 					<div className="cxn-advanced-settings-item-container">
 						<TextControl

@@ -54,6 +54,11 @@ export const InputAffiliateCode = (
 						value={ shortcode }
 						onChange={ ( value ) => setShortcode( value ) }
 					/>
+					<div className="cxn-advanced-settings-item-shortcode-point">
+						<ul>
+							<li>日本語（ひらがな・カタカナ・漢字）、英数字、記号全て使用可能</li>
+						</ul>
+					</div>
 					<div className="cxn-advanced-settings-item-container">
 						<TextControl
 							className="cxn-advanced-settings-item-function-name-form"

@@ -5,15 +5,23 @@ import { Icon, TextControl } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
 export const InputAffiliateCode = (
-	props: { setAffiliateCode: Dispatch< SetStateAction< string > > }
+	props: {
+		setAffiliateCode: Dispatch< SetStateAction< string > >
+		setAdvancedShortcode: Dispatch< SetStateAction< string > >
+	}
 ) => {
 	const [ formValue, setFormValue ] = useState( '' );
 	const [ shortcode, setShortcode ] = useState( '' );
-	const { setAffiliateCode } = props;
+	const { setAffiliateCode, setAdvancedShortcode } = props;
 
 	useEffect( () => {
 		setAffiliateCode( formValue );
 	}, [ formValue, setAffiliateCode ] );
+
+	useEffect( () => {
+		setAdvancedShortcode( shortcode );
+	}, [ shortcode, setAdvancedShortcode ] );
+
 	return (
 		<>
 			<TextControl

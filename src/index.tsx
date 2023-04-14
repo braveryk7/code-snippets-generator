@@ -10,8 +10,10 @@ import { TimelineItem } from 'src/components/layout/TimelintItem';
 
 const CodeSnippetsGenerator = () => {
 	const [ affiliateCode, setAffiliateCode ] = useState( '' );
+	const [ advancedShortcode, setAdvancedShortcode ] = useState( '' );
 	const [ PHPCode, setPHPCode ] = useState( '' );
 	const [ characterString, setCharacterString ] = useState( '' );
+
 	return (
 		<div className="cxn-code-snippets-generator-wrapper">
 			<h2>Code Snippetsリンク生成ツール</h2>
@@ -25,6 +27,7 @@ const CodeSnippetsGenerator = () => {
 					</p>
 					<InputAffiliateCode
 						setAffiliateCode={ setAffiliateCode }
+						setAdvancedShortcode={ setAdvancedShortcode }
 					/>
 				</TimelineItem>
 				<TimelineItem itemNumber={ 2 } itemHeading="PHPコードをコピーして、Code Snippetsに貼り付ける">
@@ -35,6 +38,7 @@ const CodeSnippetsGenerator = () => {
 					</p>
 					<ShowPHPCode
 						affiliateCode={ affiliateCode }
+						advancedShortcode={ advancedShortcode }
 						PHPCode={ PHPCode }
 						setPHPCode={ setPHPCode }
 						characterString={ characterString }

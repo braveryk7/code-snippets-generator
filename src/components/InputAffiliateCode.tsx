@@ -54,7 +54,7 @@ export const InputAffiliateCode = (
 				value={ formValue }
 				onChange={ ( value ) => setFormValue( value ) }
 			/>
-			<details className="cxn-advanced-settings" open>
+			<details className="cxn-advanced-settings">
 				<summary className="cxn-advanced-settings-switch">
 					高度な設定
 					<Icon

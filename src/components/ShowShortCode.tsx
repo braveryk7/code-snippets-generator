@@ -4,7 +4,9 @@ import { copyToClipboard } from 'src/utils/copyToClipboard';
 
 export const ShowShortCode = ( props: { characterString: string} ) => {
 	const { characterString } = props;
+
 	const formId = 'cxn-show-shortcode';
+	const buttonId = 'cxn-copy-shortcode-button';
 
 	return (
 		<>
@@ -16,13 +18,13 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 					ショートコード
 				</label>
 				<Button
-					id="cxn-copy-shortcode-button"
+					id={ buttonId }
 					className="cxn-copy"
 					variant="secondary"
 					onClick={
 						( ) => copyToClipboard(
 							'.cxn-show-shortcode' as keyof HTMLElementTagNameMap,
-							formId
+							buttonId
 						)
 					}
 				>
@@ -35,7 +37,9 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 				id={ formId }
 				value={ `[${ characterString }]` }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, formId, e ) }
+				onClick={
+					( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, buttonId, e )
+				}
 			/>
 		</>
 	);

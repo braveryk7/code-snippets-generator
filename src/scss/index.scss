@@ -226,6 +226,12 @@
 		margin-left: auto;
 		text-align: right;
 	}
+
+	&-copied {
+		background-color: #fff !important;
+		border: 1px solid #3572f4 !important;
+		color: #3572f4 !important;
+	}
 }
 
 @keyframes fadeIn {

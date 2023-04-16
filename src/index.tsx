@@ -1,6 +1,6 @@
 import './scss/index.scss';
 
-import { useState, createRoot } from '@wordpress/element';
+import { useState, render } from '@wordpress/element';
 
 import { InputAffiliateCode } from 'src/components/InputAffiliateCode';
 import { ShowPHPCode } from 'src/components/ShowPHPCode';
@@ -62,7 +62,4 @@ const CodeSnippetsGenerator = () => {
 };
 
 const container = document.getElementById( 'code-snippets-generator' );
-if ( container ) {
-	const root = createRoot( container );
-	root.render( <CodeSnippetsGenerator /> );
-}
+render( <CodeSnippetsGenerator />, container );

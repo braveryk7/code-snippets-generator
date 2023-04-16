@@ -88,6 +88,7 @@ export const ShowPHPCode = ( props:
 					PHPコード
 				</label>
 				<Button
+					id="cxn-copy-php-button"
 					className="cxn-copy"
 					variant="secondary"
 					onClick={

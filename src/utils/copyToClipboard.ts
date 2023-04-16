@@ -25,6 +25,7 @@ export const copyToClipboard = (
 					clearTimeout( element.timeout );
 				}
 				window.setTimeout( () => {
+					element.textContent = 'コピーする';
 					element.classList.remove( 'cxn-copied' );
 				}, 2000 );
 			} );

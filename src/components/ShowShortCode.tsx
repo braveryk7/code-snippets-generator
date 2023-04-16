@@ -4,6 +4,7 @@ import { copyToClipboard } from 'src/utils/copyToClipboard';
 
 export const ShowShortCode = ( props: { characterString: string} ) => {
 	const { characterString } = props;
+	const formId = 'cxn-show-shortcode';
 
 	return (
 		<>
@@ -19,7 +20,8 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 					variant="secondary"
 					onClick={
 						( ) => copyToClipboard(
-							'.cxn-show-shortcode' as keyof HTMLElementTagNameMap
+							'.cxn-show-shortcode' as keyof HTMLElementTagNameMap,
+							formId
 						)
 					}
 				>
@@ -29,10 +31,10 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 			<input
 				type="text"
 				className="cxn-show-shortcode"
-				id="show-shortcode"
+				id={ formId }
 				value={ `[${ characterString }]` }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, e ) }
+				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, formId, e ) }
 			/>
 		</>
 	);

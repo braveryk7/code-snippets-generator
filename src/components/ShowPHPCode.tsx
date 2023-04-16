@@ -26,6 +26,8 @@ export const ShowPHPCode = ( props:
 		setCharacterString,
 	} = props;
 
+	const formId = 'cxn-show-php';
+
 	const getNowDate = () => {
 		const now = new Date();
 		const year = now.getFullYear();
@@ -81,7 +83,7 @@ export const ShowPHPCode = ( props:
 			<div className="cxn-form-header-wrapper">
 				<label
 					className="cxn-label"
-					htmlFor="show-php"
+					htmlFor={ formId }
 				>
 					PHPコード
 				</label>
@@ -89,19 +91,22 @@ export const ShowPHPCode = ( props:
 					className="cxn-copy"
 					variant="secondary"
 					onClick={
-						( ) => copyToClipboard( '.cxn-show-php' as keyof HTMLElementTagNameMap )
+						( ) => copyToClipboard(
+							'.cxn-show-php' as keyof HTMLElementTagNameMap,
+							formId
+						)
 					}
 				>
 					コピーする
 				</Button>
 			</div>
 			<textarea
-				id="show-php"
+				id={ formId }
 				className="cxn-show-php"
 				rows={ 7 }
 				value={ PHPCode }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, e ) }
+				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, formId, e ) }
 			/>
 		</>
 	);

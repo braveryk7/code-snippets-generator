@@ -27,6 +27,7 @@ export const ShowPHPCode = ( props:
 	} = props;
 
 	const formId = 'cxn-show-php';
+	const buttonId = 'cxn-copy-php-button';
 
 	const getNowDate = () => {
 		const now = new Date();
@@ -94,7 +95,7 @@ export const ShowPHPCode = ( props:
 					onClick={
 						( ) => copyToClipboard(
 							'.cxn-show-php' as keyof HTMLElementTagNameMap,
-							formId
+							buttonId
 						)
 					}
 				>
@@ -107,7 +108,9 @@ export const ShowPHPCode = ( props:
 				rows={ 7 }
 				value={ PHPCode }
 				readOnly
-				onClick={ ( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, formId, e ) }
+				onClick={
+					( e ) => copyToClipboard( '' as keyof HTMLElementTagNameMap, buttonId, e )
+				}
 			/>
 		</>
 	);

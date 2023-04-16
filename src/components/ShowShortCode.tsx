@@ -16,6 +16,7 @@ export const ShowShortCode = ( props: { characterString: string} ) => {
 					ショートコード
 				</label>
 				<Button
+					id="cxn-copy-shortcode-button"
 					className="cxn-copy"
 					variant="secondary"
 					onClick={

@@ -1,6 +1,6 @@
 export const copyToClipboard = (
 	selector: keyof HTMLElementTagNameMap,
-	copyFormName: 'cxn-show-php' | 'cxn-show-shortcode',
+	copyFormButtonName: 'cxn-copy-php-button' | 'cxn-copy-shortcode-button',
 	e?: React.MouseEvent<HTMLElement, MouseEvent>,
 ) => {
 	const target = e
@@ -8,8 +8,8 @@ export const copyToClipboard = (
 		: document.querySelector( selector ) as HTMLTextAreaElement;
 	navigator.clipboard.writeText( target.value );
 
-	if ( copyFormName ) {
-		const formId = document.getElementById( copyFormName );
+	if ( copyFormButtonName ) {
+		const formId = document.getElementById( copyFormButtonName );
 		if ( formId ) {
 			formId.classList.add( 'cxn-copied' );
 		}

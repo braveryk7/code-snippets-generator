@@ -12,6 +12,7 @@ export const copyToClipboard = (
 		const formId = document.getElementById( copyFormButtonName );
 		if ( formId ) {
 			formId.classList.add( 'cxn-copied' );
+			formId.textContent = 'コピーしました';
 		}
 	}
 
